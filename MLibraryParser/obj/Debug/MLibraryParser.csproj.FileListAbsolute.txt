@@ -1,0 +1,9 @@
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\MLibraryParser.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\MLibraryParser.pdb
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\LiteMic.Core.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\LiteMic.Core.Fixture.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\LiteMic.Core.Fixture.pdb
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\bin\Debug\LiteMic.Core.pdb
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.pdb

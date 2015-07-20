@@ -1,0 +1,5 @@
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core\bin\Debug\LiteMic.Core.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core\bin\Debug\LiteMic.Core.pdb
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core\obj\Debug\LiteMic.Core.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core\obj\Debug\LiteMic.Core.dll
+C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core\obj\Debug\LiteMic.Core.pdb
