@@ -54,14 +54,15 @@
     <Compile Include="FixtureParser.cs" />
     <Compile Include="MediaParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiteMic.Core.Fixture\LiteMic.Core.Fixture.csproj">
+    <ProjectReference Include="..\LiteMic.Core.Fixture\Carallon.Database.Models.csproj">
       <Project>{db70913b-965e-41fb-8f97-5bff6a25d0ab}</Project>
-      <Name>LiteMic.Core.Fixture</Name>
+      <Name>Carallon.Database.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\MLibraryParser\MLibraryParser.csproj">
       <Project>{75298973-ed55-4a07-8aa7-ad1a108dda39}</Project>

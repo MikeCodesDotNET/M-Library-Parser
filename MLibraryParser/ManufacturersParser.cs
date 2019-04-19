@@ -1,16 +1,14 @@
-﻿using LiteMic.Core.Fixture;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using LiteMic.Helpers;
-using System.Globalization;
+using Carallon.MLibrary.Fixture;
+using Carallon.Helpers;
+using Carallon.MLibrary.Models.Misc;
 
-namespace LiteMic.Parsers
+namespace Carallon.Parsers
 {
     public partial class Parser
     {

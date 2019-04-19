@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
-using LiteMic.Core.Fixture.Enums;
+using Carallon.MLibrary.Fixture.Enums;
+using Carallon.MLibrary.Models;
+using Carallon.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Parser.Tests
 {
     [TestClass()]
-    public class ParseFixtureModels
+    public class ParseFixtureModels : TestBase
     {
         #region data files for test
         // clay_paky - All tests complete
@@ -37,11 +39,28 @@ namespace Parser.Tests
         // \data\fixtures\varilite\vl5_m3\vl5_m3.xml
 
         #endregion
-        
+
+        FixtureParser fixtureParser = new FixtureParser();
+
         [TestMethod()]
-        public void ParseFixtureTest()
+        public void ParseMartinSCX500Mode2()
         {
-            
+            var path = $@"{Root}data\fixtures\martin\mania_scx500_8ch\mania_scx500_8ch.xml";
+            Carallon.MLibrary.Models.FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
+
+            Assert.IsTrue(fixtureModel.Header.PhysicalProperties.MovementType == Carallon.MLibrary.Models.Physical.Enums.MovementType.Mirror);
+
+            //Gobo Tests 
+            Assert.IsTrue(fixtureModel.HasGobos == true);
+
+
+            //Colour Tests 
+            Assert.IsTrue(fixtureModel.Header.PhysicalProperties.ColourMixingType == Carallon.MLibrary.Fixture.Enums.ColourMixing.MixingType.None);
+
+            Assert.IsTrue(fixtureModel.Header.PhysicalProperties.ValueMaps.First(x => x.FeatureName == FeatureName.Pan) != null);
+            Assert.IsTrue(fixtureModel.Header.PhysicalProperties.ValueMaps.First(x => x.FeatureName == FeatureName.Tilt) != null);
+            Assert.IsTrue(fixtureModel.Header.PhysicalProperties.ValueMaps.First(x => x.FeatureName == FeatureName.Pan).Specs.Where(x => x.UnitValue == 90) != null);
+
         }
 
         #region clay_paky
@@ -50,8 +69,8 @@ namespace Parser.Tests
         public void ParseFixtureClayPakyGoldenScan6ChannelTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\clay_paky\goldenscan_3_6_ch\goldenscan_3_6_ch.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\clay_paky\goldenscan_3_6_ch\goldenscan_3_6_ch.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
@@ -65,8 +84,8 @@ namespace Parser.Tests
         public void ParseFixtureClayPakyGoldenScan8ChannelTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\clay_paky\goldenscan_3_8_ch\goldenscan_3_8_ch.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\clay_paky\goldenscan_3_8_ch\goldenscan_3_8_ch.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
@@ -80,18 +99,18 @@ namespace Parser.Tests
         public void ParseFixtureMiniscanHpeTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\clay_paky\miniscan_hpe\miniscan_hpe.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\clay_paky\miniscan_hpe\miniscan_hpe.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
-            Assert.AreEqual(fixtureModel.Physical.FixtureMass, 16f);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.FixtureMass, 16f);
 
-            Assert.AreEqual(fixtureModel.Physical.BeamAngle.Angle, 16.6f);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.BeamAngle.Angle, 16.6f);
 
-            Assert.AreEqual(fixtureModel.Physical.Dimension.X, 238f);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.Dimension.X, 238f);
 
             Assert.AreEqual(
-                fixtureModel.Physical.SlotMaps.First(f => f.WheelType.HasValue && f.WheelType.Value == WheelType.Static)
-                    .Slots.First(s => s.Number == 4)
+                fixtureModel.Header.PhysicalProperties.SlotMaps.First(f => f.WheelType.HasValue && f.WheelType.Value == WheelType.Static)
+                    .Slots.First(s => s.SlotNumber == 4)
                     .MediaRangeInfo.Manufacturer, "generic");
 
 
@@ -110,8 +129,8 @@ namespace Parser.Tests
         public void ParseFixtureInfinitySpot8BitTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\coemar\infinity_spot_xl_8_bit_gobo\infinity_spot_xl_8_bit_gobo.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\coemar\infinity_spot_xl_8_bit_gobo\infinity_spot_xl_8_bit_gobo.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Macros)
@@ -120,9 +139,9 @@ namespace Parser.Tests
                     .ElementAt(1)
                     .DmxValueRange.End, 65);
 
-            Assert.AreEqual(fixtureModel.Physical.SlotMaps.First().Slots.First(s => s.Number == 5).MediaRangeInfo.Manufacturer, "coemar");
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.SlotMaps.First().Slots.First(s => s.SlotNumber == 5).MediaRangeInfo.Manufacturer, "coemar");
 
-            Assert.AreEqual(fixtureModel.Physical.ValueMaps.ElementAt(3).FeatureName, FeatureName.Lamp_Power);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.ValueMaps.ElementAt(3).FeatureName, FeatureName.Lamp_Power);
             
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
@@ -130,12 +149,12 @@ namespace Parser.Tests
                     .Ranges.ElementAt(1)
                     .FeatureRange.First().FeatureName, FeatureName.Strobe);
 
-            Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels).First(c => c.ChannelNum.Contains(8)).Ranges.ElementAt(3).Range.End, 189);
+            Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels).First(c => c.ChannelNumber.Contains(8)).Ranges.ElementAt(3).Range.End, 189);
 
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
-                    .First(c => c.ChannelNum.Contains(14))
+                    .First(c => c.ChannelNumber.Contains(14))
                     .Ranges.First(r => r.Range.End == 40)
                     .FeatureRange.First()
                     .FeatureName, FeatureName.Gobo_Wheel_Select);
@@ -145,16 +164,16 @@ namespace Parser.Tests
         public void ParseFixtureInfinitySpot16BitTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\coemar\infinity_spot_xl_16_bit_gobo\infinity_spot_xl_16_bit_gobo.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\coemar\infinity_spot_xl_16_bit_gobo\infinity_spot_xl_16_bit_gobo.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
-                fixtureModel.Physical.SlotMaps.First(f => f.WheelType.HasValue && f.WheelType == WheelType.Rotating)
-                    .Slots.First(s => s.Number == 6)
-                    .MediaName, "G0201");
+                fixtureModel.Header.PhysicalProperties.SlotMaps.First(f => f.WheelType.HasValue && f.WheelType == WheelType.Rotating)
+                    .Slots.First(s => s.SlotNumber == 6)
+                    .MediaName, "201");
 
             Assert.AreEqual(
-                fixtureModel.Physical.ValueMaps.First(f => f.UnitName.HasValue && f.UnitName == UnitType.Watts)
+                fixtureModel.Header.PhysicalProperties.ValueMaps.First(f => f.UnitName.HasValue && f.UnitName == UnitType.Watts)
                     .Specs.Last()
                     .UnitValue, 1500);
 
@@ -172,7 +191,7 @@ namespace Parser.Tests
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
-                    .First(c => c.ChannelNum.Contains(5))
+                    .First(c => c.ChannelNumber.Contains(5))
                     .Ranges.ElementAt(2)
                     .FeatureRange.First()
                     .FeatureName, FeatureName.Position_MSpeed_Track);
@@ -180,7 +199,7 @@ namespace Parser.Tests
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels)
-                    .First(c => c.ChannelNum.Contains(11))
+                    .First(c => c.ChannelNumber.Contains(11))
                     .Ranges.First(r => r.Range.End == 70).ConditionalRangeSet.RangeSetCondition.ChannelNum
                 , 29);
         }
@@ -193,10 +212,10 @@ namespace Parser.Tests
         public void ParseFixtureChromaQColorWeb125Test()
         {
             // passed 
-            var path = @"..\..\..\data\fixtures\chroma_q\colorweb_125\colorweb_125.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\chroma_q\colorweb_125\colorweb_125.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
-            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.DominantFeatureGroup == FeatureGroup.Green).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Green);
+            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.DominantFeatureGroup == FeatureGroup.Red).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Red);
 
             Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.First().Channels.First(c => c.ElementNumber == 5).Modules.First().Name, "RGB module");
         }
@@ -209,12 +228,12 @@ namespace Parser.Tests
         public void ParseFixtureEtcPearl21LedTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\etc\pearl_21\pearl_21.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\etc\pearl_21\pearl_21.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
-            Assert.AreEqual(fixtureModel.Physical.CompoundStructure.GeometryYCount, 1);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.CompoundStructure.GeometryYCount, 1);
 
-            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNum.Contains(2)).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Cool_White);
+            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNumber.Contains(2)).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Cool_White);
 
             Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.First(pg => pg.PatchFootprint == 3).Channels.First().Modules.First().Name, "WW-CW-I Cluster");
         }
@@ -223,12 +242,12 @@ namespace Parser.Tests
         public void ParseFixtureEtcPearl42LedTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\etc\pearl_42\pearl_42.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\etc\pearl_42\pearl_42.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
-            Assert.AreEqual(fixtureModel.Physical.CompoundStructure.CellSizeX, 270);
+            Assert.AreEqual(fixtureModel.Header.PhysicalProperties.CompoundStructure.CellSizeX, 270);
 
-            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNum.Contains(1)).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Warm_White);
+            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNumber.Contains(1)).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Warm_White);
 
             Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.First(pg => pg.PatchGroupLabel == "Part#2").Channels.First().Modules.First().Name, "WW-CW-I Cluster");
         }
@@ -240,8 +259,8 @@ namespace Parser.Tests
         [TestMethod]
         public void ParseFixtureVariliteVl5Mode3Test()
         {
-            var path = @"..\..\..\data\fixtures\varilite\vl5_m3\vl5_m3.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\varilite\vl5_m3\vl5_m3.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             // TODO - write test case
         }
@@ -254,8 +273,8 @@ namespace Parser.Tests
         public void ParseFixtureGeneric8BitDimmerTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\conventional_8_bit\conventional_8_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\generic\conventional_8_bit\conventional_8_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels.SelectMany(c => c.Ranges))
@@ -267,8 +286,8 @@ namespace Parser.Tests
         public void ParseFixtureGeneric16BitDimmerTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\conventional_16_bit\conventional_16_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\generic\conventional_16_bit\conventional_16_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels.SelectMany(c => c.Ranges))
@@ -280,8 +299,8 @@ namespace Parser.Tests
         public void ParseFixtureGenericLedRgba8BitDimmerTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\led_rgba_8_bit\led_rgba_8_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\generic\led_rgba_8_bit\led_rgba_8_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.ModuleDefinitions.First(md => md.ModuleFootprint == 4)
@@ -297,8 +316,8 @@ namespace Parser.Tests
         public void ParseFixtureGenericLedRgbs16BitDimmerTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\led_rgba_16_bit\led_rgba_16_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\generic\led_rgba_16_bit\led_rgba_16_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
             Assert.AreEqual(
                 fixtureModel.DmxSpecification.ModuleDefinitions.First(md => md.ModuleFootprint == 8)
@@ -308,16 +327,15 @@ namespace Parser.Tests
                 fixtureModel.DmxSpecification.PatchGroups.SelectMany(pg => pg.Channels.SelectMany(c => c.Modules))
                     .First().Name, "RGBA Cluster");
         }
-
-
+        
         [TestMethod]
         public void ParseFixtureGenericLedRgbaw8BitTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\led_rgbaw_8_bit\led_rgbaw_8_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
+            var path = $@"{Root}data\fixtures\generic\led_rgbaw_8_bit\led_rgbaw_8_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
 
-            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNum.Contains(3)).Ranges.First().FeatureRange.First().FeatureName,FeatureName.Blue);
+            Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.ChannelNumber.Contains(3)).Ranges.First().FeatureRange.First().FeatureName,FeatureName.Blue);
 
             Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.First().Channels.First().Modules.First().Name, "RGBAW Cluster");
         }
@@ -326,9 +344,9 @@ namespace Parser.Tests
         public void ParseFixtureGenericLedRgbaw16BitTest()
         {
             // passed
-            var path = @"..\..\..\data\fixtures\generic\led_rgbaw_16_bit\led_rgbaw_16_bit.xml";
-            LiteMic.Core.Fixture.FixtureModel fixtureModel = LiteMic.Parsers.Parser.ParseFixture(path);
-            
+            var path = $@"{Root}data\fixtures\generic\led_rgbaw_16_bit\led_rgbaw_16_bit.xml";
+            FixtureModel fixtureModel = fixtureParser.ParseFixture(path);
+
             Assert.AreEqual(fixtureModel.DmxSpecification.ModuleDefinitions.SelectMany(md => md.Channels).First(c => c.DominantFeatureGroup == FeatureGroup.Green).Ranges.First().FeatureRange.First().FeatureName, FeatureName.Green);
 
             Assert.AreEqual(fixtureModel.DmxSpecification.PatchGroups.First().Channels.First().Modules.First().Name, "RGBAW Cluster");

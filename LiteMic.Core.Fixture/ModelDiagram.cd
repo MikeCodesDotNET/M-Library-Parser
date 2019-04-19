@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Carallon.MLibrary.Fixture.Macro">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAQAAAAAACAAAAAAAAQAAAA=</HashCode>
+      <FileName>Macro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.FixtureModel">
+    <Position X="20.5" Y="11.25" Width="2" />
+    <AssociationLine Name="DmxSpecification" Type="Carallon.MLibrary.Models.Dmx.DmxSpecification" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.688" Y="13.959" />
+        <Point X="21.688" Y="15.552" />
+        <Point X="23.25" Y="15.552" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Slots" Type="Carallon.MLibrary.Models.Slot" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.875" Y="13.959" />
+        <Point X="20.875" Y="17.494" />
+        <Point X="23.25" Y="17.494" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAAAAAIAQAAAAEIBAAAAABABACAAAAAAAABA=</HashCode>
+      <FileName>FixtureModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DmxSpecification" />
+      <Property Name="Header" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Slots" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.RangeValue" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="20.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RangeValue.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.ResponseTime">
+    <Position X="12.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResponseTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.Media" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAAgAAAAAAAAAQAAAAABAAAAAgAIAAAQwA=</HashCode>
+      <FileName>Media\Media.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.MediaRange" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAQgACQAAAAwAAAAAIABAAAAABAAAAAQ=</HashCode>
+      <FileName>Media\MediaRange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.MediaRangeInfo">
+    <Position X="27" Y="16.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Media\MediaRangeInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.Manufacturer">
+    <Position X="4.5" Y="14.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAACAIAAAAAAAAAAABAAAAIAAAAAAABAEAAAAAAAAAA=</HashCode>
+      <FileName>Manufacturers\Manufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.Manufacturers" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="14.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Manufacturers\Manufacturers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ManufacturerList" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.245" Collapsed="true" />
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.PatchGroup" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\PatchGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.DmxChannelSetting">
+    <Position X="42" Y="18.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxChannelSetting.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DmxValueRange" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.DmxMacro">
+    <Position X="31.75" Y="24.25" Width="2.5" />
+    <AssociationLine Name="FeatureRanges" Type="Carallon.MLibrary.Fixture.FeatureRange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="34.25" Y="24.684" />
+        <Point X="49" Y="24.684" />
+        <Point X="49" Y="18.488" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxMacro.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="FeatureRanges" />
+      <Property Name="TimingSets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.DmxTimingSet">
+    <Position X="34.5" Y="25.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxTimingSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.Feature">
+    <Position X="15.5" Y="4.5" Width="3" />
+    <AssociationLine Name="Slots" Type="Carallon.MLibrary.Models.Slot" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.438" Y="6.44" />
+        <Point X="17.438" Y="7.199" />
+        <Point X="18.385" Y="7.199" />
+        <Point X="18.385" Y="18.613" />
+        <Point X="24.312" Y="18.613" />
+        <Point X="24.312" Y="18.238" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAAAAAAAgAEAAAAAAAAKAgAAAABAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\Feature.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WheelType" />
+      <Property Name="ResponseTime" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Slots" />
+      <Property Name="Specs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.FeatureRange">
+    <Position X="47.75" Y="17" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAgAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\FeatureRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxChannel">
+    <Position X="35.5" Y="15.5" Width="2.5" />
+    <AssociationLine Name="Ranges" Type="Carallon.MLibrary.Models.Dmx.DmxRange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="38" Y="15.875" />
+        <Point X="38.375" Y="15.875" />
+        <Point X="38.375" Y="13.648" />
+        <Point X="39" Y="13.648" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACIEAAEAAACAAAAAIAIAAQAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxChannel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DominantFeatureGroup" />
+      <Property Name="ChanelNumberRange" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Modules" />
+      <Property Name="Ranges" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxModule">
+    <Position X="37.75" Y="22" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxModuleDefinition">
+    <Position X="31" Y="15" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAAEAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxModuleDefinition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Channels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxPatchGroup">
+    <Position X="31" Y="16.75" Width="2.5" />
+    <AssociationLine Name="Channels" Type="Carallon.MLibrary.Models.Dmx.DmxChannel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="33.5" Y="17.562" />
+        <Point X="33.875" Y="17.562" />
+        <Point X="33.875" Y="16.875" />
+        <Point X="35.5" Y="16.875" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.349" Height="0.182" Width="0.818" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAEAAAAAAgAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxPatchgroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Channels" />
+      <Property Name="Macros" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxRange">
+    <Position X="39" Y="13" Width="2.5" />
+    <AssociationLine Name="ConditionalRangeSet" Type="Carallon.MLibrary.Fixture.ConditionalDmxRangeSet">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.039" Y="-0.019" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FeatureRange" Type="Carallon.MLibrary.Fixture.FeatureRange" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="40.312" Y="14.296" />
+        <Point X="40.312" Y="14.671" />
+        <Point X="48.938" Y="14.671" />
+        <Point X="48.938" Y="17" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAQABAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxRange.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ConditionalRangeSet" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FeatureRange" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Dmx.DmxSpecification" BaseTypeListCollapsed="true">
+    <Position X="23.25" Y="15" Width="2" />
+    <AssociationLine Name="PatchGroups" Type="Carallon.MLibrary.Models.Dmx.DmxPatchGroup" ManuallyRouted="true">
+      <Path>
+        <Point X="25.25" Y="15.859" />
+        <Point X="29.818" Y="15.859" />
+        <Point X="29.818" Y="17.774" />
+        <Point X="31" Y="17.774" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\DmxSpecification.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ModuleDefinitions" />
+      <Property Name="PatchGroups" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.Channel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAAAAEAAEIAAAAAAABAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\Channel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.ConditionalDmxRangeSet">
+    <Position X="49.5" Y="13.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\Conditional\ConditionalDmxRangeSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RangeSetCondition" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.DmxRangeSetCondition">
+    <Position X="54" Y="17" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\DmxSpecification\Conditional\DmxRangeSetCondition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DmxRange" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Header.FixtureHeader">
+    <Position X="27" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAIgAAAAAIEAAAAACAEAAAAADAAEAAAgAAAA=</HashCode>
+      <FileName>FixtureModel\Header\FixtureHeader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PhysicalProperties" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.PhysicalProperties">
+    <Position X="30.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAgAAAAIAAIAgAAABAAAQAAQAQCAEBAAAAA=</HashCode>
+      <FileName>FixtureModel\Header\PhysicalProperties.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BeamType" />
+      <Property Name="ColourMixingType" />
+      <Property Name="LightGeneration" />
+      <Property Name="MovementType" />
+      <Property Name="Type" />
+      <Property Name="CompoundStructure" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SlotMaps" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Slot">
+    <Position X="23.25" Y="16.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAABAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FixtureModel\Slot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MediaRangeInfo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Carallon.MLibrary.Models.Physical.CompoundStructure">
+    <Position X="30" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>FixtureModel\Header\Physical\CompoundStructure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carallon.MLibrary.Fixture.SpecValue">
+    <Position X="20" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FixtureModel\Header\SpecValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Carallon.MLibrary.Models.Abstractions.IDmxSpecification" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Abstractions\IDmxSpecification.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Carallon.MLibrary.Models.Abstractions.IRangeValue" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\IRangeValue.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.CellType" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAAAAiAAAAAAAAAAQAAAAAAAAgAAAAAAQAAAAAABA=</HashCode>
+      <FileName>Enums\CellType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.ColourMixStatus" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ColourMixStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.DmxStatus" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAEAAAAAQAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Enums\DmxStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.FeatureGroup" Collapsed="true">
+    <Position X="40.25" Y="16.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>MAACoAQMAAUgAgggCBQACIEIFAICAAAAABYAALIQBQI=</HashCode>
+      <FileName>Enums\FeatureGroup.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.FeatureName" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAQShkQMEYQkJowgOhcByJUJNEIAABAAeBYAAbJYRRI=</HashCode>
+      <FileName>Enums\FeatureName.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.MediaType" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAgAAABAgAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Enums\MediaType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.NoPhotometricDataReason" Collapsed="true">
+    <Position X="5.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACgAAUgAAAEAQAAAgACAABAAAAAEAAAAgwAAAAA=</HashCode>
+      <FileName>Enums\NoPhotometricDataReason.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.PhotometricStatus" Collapsed="true">
+    <Position X="7.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAA=</HashCode>
+      <FileName>Enums\PhotometricStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.RdmStatus" Collapsed="true">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAAEAAAAAQAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Enums\RdmStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.UnitType" Collapsed="true">
+    <Position X="5.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEBAAAAAAAAAQBABQCAAQAQAhASgCAAAhCAACAAE=</HashCode>
+      <FileName>Enums\UnitType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.ValidPatchGroupLabel" Collapsed="true">
+    <Position X="7.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAA=</HashCode>
+      <FileName>Enums\ValidPatchGroupLabel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.WheelType">
+    <Position X="15.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\WheelType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Models.Physical.Enums.PhysicalType">
+    <Position X="34.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAgAAQgAAAEAQAAAgACAABAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Enums\PhysicalType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.ValidSlotEntry" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Enums\ValidSlotEntry.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.Litho.BaseImage" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JGAVgjBGCAGABABhgAgCChCQSQigIwAAsACiiCwAiKQ=</HashCode>
+      <FileName>Enums\Litho\BaseImage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.Litho.ImageColour" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAQAAAAAIhAAEAAABAAAEAAAAAAAAAAAADAAABA=</HashCode>
+      <FileName>Enums\Litho\ImageColour.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.Litho.ImageSize" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Enums\Litho\ImageSize.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.Litho.ImageType" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Enums\Litho\ImageType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.Litho.RepeatPattern" Collapsed="true">
+    <Position X="4" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAACIABAAABAABAAAAggBUAAAACCAAQAAAA=</HashCode>
+      <FileName>Enums\Litho\RepeatPattern.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.ColourMixing.MixingSystemTypeAdditive" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAgIIAgACAAAUAEEQEAAAAAAEDQQAIQAEKGAAABo=</HashCode>
+      <FileName>Enums\ColourMixing\MixingSystemTypeAdditive.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.ColourMixing.MixingSystemTypeSubtractive" Collapsed="true">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABACAAAACAEAgCAAACCABAAAACAAAAAAAAIAKBA=</HashCode>
+      <FileName>Enums\ColourMixing\MixingSystemTypeSubtractive.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Fixture.Enums.ColourMixing.MixingType">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAEEAAg=</HashCode>
+      <FileName>Enums\ColourMixing\MixingType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Models.Physical.Enums.BeamType">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAEQAAAAAgAAAEAABA=</HashCode>
+      <FileName>FixtureModel\Header\Physical\BeamType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Models.Physical.Enums.LightGeneration">
+    <Position X="34.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAACAgAAAAAAAAAAAAAAAAAEIAAAAAEgABA=</HashCode>
+      <FileName>FixtureModel\Header\Physical\LightGeneration.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Carallon.MLibrary.Models.Physical.Enums.MovementType">
+    <Position X="34.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAQAQAAAAgAAAAAAAAAAgAAAAAAAACgQAAMAAAA=</HashCode>
+      <FileName>FixtureModel\Header\Physical\MovementType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

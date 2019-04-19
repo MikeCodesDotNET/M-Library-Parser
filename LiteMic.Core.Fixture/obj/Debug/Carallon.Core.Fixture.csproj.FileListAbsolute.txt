@@ -1,0 +1,6 @@
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\LiteMic.Core.Fixture.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\LiteMic.Core.Fixture.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\Carallon.Core.Fixture.csprojAssemblyReference.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\Carallon.Core.Fixture.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteMic.Core.Fixture.Enums
+namespace Carallon.MLibrary.Fixture.Enums
 {
     public enum FeatureName
     {
@@ -88,5 +88,9 @@ namespace LiteMic.Core.Fixture.Enums
         Connected_Load,
         Cool_White,
         Warm_White,
+        Animation_Wheel_Select,
+        Animation_Wheel_Incline,
+
+
     }
 }

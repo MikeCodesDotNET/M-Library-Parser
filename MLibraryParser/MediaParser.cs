@@ -1,22 +1,18 @@
-﻿using LiteMic.Core.Fixture;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using LiteMic.Helpers;
-using System.Globalization;
-using LiteMic.Core.Fixture.Enums;
-using LiteMic.Core.Fixture.Enums.Litho;
 
-namespace LiteMic.Parsers
+using Carallon.MLibrary.Fixture;
+using Carallon.MLibrary.Fixture.Enums;
+using Carallon.MLibrary.Fixture.Enums.Litho;
+using Carallon.Helpers;
+using Carallon.MLibrary.Models.Misc;
+
+namespace Carallon.Parsers
 {
-    public partial class Parser
+    public class MediaParser : BaseParser
     {
-        public static MediaRange ParseMediaRange(string filename, bool removeTestData = true)
+        public MediaRange ParseMediaRange(string filename, bool removeTestData = true)
         {
             var directory = Path.GetDirectoryName(filename);
 
@@ -29,7 +25,7 @@ namespace LiteMic.Parsers
             var root = doc.Element("MediaRange");
             var mediaNodes = root.Elements("Media");
 
-            ParseRevisions(root, mediaRange);
+            mediaRange.RevisionHistory = ParseRevisions(root);
 
             XElement node;
             
@@ -39,8 +35,7 @@ namespace LiteMic.Parsers
 
             string mediaRangePrefix = string.Empty;
 
-            TryExecute(()
-                =>
+            TryExecute(() =>
                        {
                            val = ParseElement<string>(root, "RangeName");
                            Validate(() => Validator.HasValue(val));
@@ -48,16 +43,14 @@ namespace LiteMic.Parsers
                        }, "RangeName", mediaRange.Error);
 
             
-            TryExecute(()
-                =>
+            TryExecute(() =>
                        {
                            val = ParseElement<string>(root, "MediaType");
                            if(!Validate(() => Validator.HasValue(val)).IsSuccess) return;
                            mediaRange.MediaType = ParseEnum<MediaType>(val);
                        }, "MediaType", mediaRange.Error);
 
-            TryExecute(()
-                =>
+            TryExecute(() =>
                        {
                            val = ParseAttribute<string>(root, "ManuId");
                            if(!Validate(() => Validator.HasValue(val)).IsSuccess) return;
@@ -67,8 +60,7 @@ namespace LiteMic.Parsers
                            mediaRangePrefix = val;
                        }, "ManuId", mediaRange.Error);
 
-            TryExecute(()
-                =>
+            TryExecute(() =>
                        {
                            val = ParseAttribute<string>(root, "RangeId");
                            if(!Validate(() => Validator.HasValue(val)).IsSuccess) return;
@@ -83,18 +75,15 @@ namespace LiteMic.Parsers
                 media = new Media();
                 error = new ParseResult(mediaNode.Name.LocalName);
 
-                TryExecute(()
-                    =>
+                TryExecute(() =>
                            {
                                val = ParseAttribute<string>(mediaNode, "MediaId");
                                if(!Validate(() => Validator.HasValue(val)).IsSuccess) return;
-                               Validate(() => Validator.IsLengthBetween(2, 2, val));
-                               Validate(() => Validator.IsMatch("^\\d{2}", val));
+                               Validate(() => Validator.IsLengthBetween(2, 3, val));
                                media.Id = GetCanonicalized(val);
                            }, "MediaId", error);
 
-                TryExecute(()
-                    =>
+                TryExecute(() =>
                            {
                                val = ParseAttribute<string>(mediaNode, "MediaName");
                                if(!Validate(() => Validator.HasValue(val)).IsSuccess) return;
@@ -102,45 +91,39 @@ namespace LiteMic.Parsers
                                media.Name = val;
                            }, "MediaName", error);
 
-                TryExecute(
-                    () =>
+                TryExecute(() =>
                     {
                         // ensure child node exist
                         node = mediaNode.GetElement("LithoImage", true);
-
                         TryExecute(()
                             =>
                                    {
                                        val = ParseAttribute<string>(node, "BaseImage");
-                                       media.BaseImage = ParseEnum<BaseImage>(val);
+                                       media.LithoImage.BaseImage = ParseEnum<BaseImage>(val);
                                    }, "BaseImage", error);
 
-                        TryExecute(()
-                            =>
+                        TryExecute(() =>
                                    {
                                        val = ParseAttribute<string>(node, "ImageSize");
-                                       media.Size = ParseEnum<ImageSize>(val);
+                                       media.LithoImage.Size = ParseEnum<ImageSize>(val);
                                    }, "ImageSize", error);
 
-                        TryExecute(()
-                            =>
+                        TryExecute(() =>
                                    {
                                        val = ParseAttribute<string>(node, "RepeatQuantity");
                                        if (!Validate(() => Validator.HasValue(val)).IsSuccess) return;
-                                       media.RepeatQuantity = val;
+                                       media.LithoImage.RepeatQuantity = val;
                                    }, "BaseImage", error);
 
-                        TryExecute(()
-                            =>
+                        TryExecute(() =>
                                    {
                                        val = ParseAttribute<string>(node, "RepeatPattern");
-                                       media.RepeatPattern = ParseEnum<RepeatPattern>(val);
+                                       media.LithoImage.RepeatPattern = ParseEnum<RepeatPattern>(val);
                                    }, "RepeatPattern", error);
 
                     }, "LithoImage", error);
 
-                TryExecute(
-                    () =>
+                TryExecute(() =>
                     {
                         // ensure child node exist
                         node = mediaNode.GetElement("LithoColour", true);
@@ -149,20 +132,19 @@ namespace LiteMic.Parsers
                             =>
                                    {
                                        val = ParseAttribute<string>(node, "ImageType");
-                                       media.ImageType = ParseEnum<ImageType>(val);
+                                       media.LithoColour.ImageType = ParseEnum<ImageType>(val);
                                    }, "ImageType", error);
 
                         TryExecute(()
                             =>
                                    {
                                        val = ParseAttribute<string>(node, "ImageColour");
-                                       media.ImageColour = ParseEnum<ImageColour>(val);
+                                       media.LithoColour.ImageColour = ParseEnum<ImageColour>(val);
                                    }, "ImageColour", error);
 
                     }, "LithoColour", error);
 
-                TryExecute(()
-                    =>
+                TryExecute(() =>
                            {
                                if (files.ContainsKey(mediaRangePrefix + media.Id))
                                    media.ImageName = files[mediaRangePrefix + media.Id];

@@ -8,3 +8,15 @@ C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\Parser.Tests
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\Parser.Tests\obj\Debug\Parser.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\Parser.Tests\obj\Debug\Parser.Tests.dll
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\Parser.Tests\obj\Debug\Parser.Tests.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\Parser.Tests.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\Parser.Tests.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\MLibraryParser.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\MLibraryParser.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\obj\Debug\Parser.Tests.csprojAssemblyReference.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\obj\Debug\Parser.Tests.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\obj\Debug\Parser.Tests.csproj.CopyComplete
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\obj\Debug\Parser.Tests.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\obj\Debug\Parser.Tests.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\Carallon.MLibrary.Models.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\Parser.Tests\bin\Debug\Carallon.MLibrary.Models.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteMic.Core.Fixture.Enums
+namespace Carallon.MLibrary.Fixture.Enums
 {
     public enum ColourMixStatus
     {

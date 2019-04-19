@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteMic.Core.Fixture.Enums.ColourMixing
+namespace Carallon.MLibrary.Fixture.Enums.ColourMixing
 {
     //Values that the MixingSystem attribute (within ColourMixing tag) can take if MixingType is Subtractive
     public enum MixingSystemTypeSubtractive

@@ -3,3 +3,9 @@ C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.csprojResolveAssemblyReference.cache
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.dll
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\LiteMic.Core.Fixture.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\LiteMic.Core.Fixture.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\LiteMic.Core.Fixture.csprojAssemblyReference.cache

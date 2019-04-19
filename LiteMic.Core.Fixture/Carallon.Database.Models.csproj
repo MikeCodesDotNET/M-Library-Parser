@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB70913B-965E-41FB-8F97-5BFF6A25D0AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carallon.MLibrary.Models</RootNamespace>
+    <AssemblyName>Carallon.MLibrary.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\IDmxSpecification.cs" />
+    <Compile Include="Abstractions\IRangeValue.cs" />
+    <Compile Include="Enums\ColourMixing\MixingSystem.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\Channel.cs" />
+    <Compile Include="FixtureModel\Header\ElementStructure.cs" />
+    <Compile Include="FixtureModel\Header\EnumValue.cs" />
+    <Compile Include="FixtureModel\Header\FixtureHeader.cs" />
+    <Compile Include="FixtureModel\Header\OpticalSystem.cs" />
+    <Compile Include="FixtureModel\Header\Physical\CompoundStructure.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\Conditional\ConditionalDmxRangeSet.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxChannel.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxChannelSetting.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxMacro.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxModule.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxModuleDefinition.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxPatchgroup.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxRange.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\Conditional\DmxRangeSetCondition.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxSpecification.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\DmxTimingSet.cs" />
+    <Compile Include="FixtureModel\Header\Physical\BeamType.cs" />
+    <Compile Include="Enums\CellType.cs" />
+    <Compile Include="Enums\ColourMixing\MixingSystemTypeAdditive.cs" />
+    <Compile Include="Enums\ColourMixing\MixingSystemTypeSubtractive.cs" />
+    <Compile Include="Enums\ColourMixStatus.cs" />
+    <Compile Include="Enums\ColourMixing\MixingType.cs" />
+    <Compile Include="Enums\FeatureName.cs" />
+    <Compile Include="Enums\Litho\BaseImage.cs" />
+    <Compile Include="Enums\Litho\ImageColour.cs" />
+    <Compile Include="Enums\Litho\ImageSize.cs" />
+    <Compile Include="Enums\Litho\ImageType.cs" />
+    <Compile Include="Enums\Litho\RepeatPattern.cs" />
+    <Compile Include="Enums\MediaType.cs" />
+    <Compile Include="FixtureModel\Header\Physical\MovementType.cs" />
+    <Compile Include="Enums\FeatureGroup.cs" />
+    <Compile Include="Enums\NoPhotometricDataReason.cs" />
+    <Compile Include="Enums\PhotometricStatus.cs" />
+    <Compile Include="Enums\RdmStatus.cs" />
+    <Compile Include="Enums\DmxStatus.cs" />
+    <Compile Include="FixtureModel\Header\Physical\LightGeneration.cs" />
+    <Compile Include="Enums\PhysicalType.cs" />
+    <Compile Include="Enums\UnitType.cs" />
+    <Compile Include="Enums\ValidPatchGroupLabel.cs" />
+    <Compile Include="Enums\WheelType.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\Feature.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\FeatureRange.cs" />
+    <Compile Include="FixtureModel\Header\Physical\BeamAngle.cs" />
+    <Compile Include="FixtureModel\Header\Physical\Dimension.cs" />
+    <Compile Include="FixtureModel.cs" />
+    <Compile Include="Media\LithoColour.cs" />
+    <Compile Include="Media\LithoImage.cs" />
+    <Compile Include="Misc\Interfaces.cs" />
+    <Compile Include="Macro.cs" />
+    <Compile Include="Manufacturers\Manufacturer.cs" />
+    <Compile Include="Manufacturers\Manufacturers.cs" />
+    <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\MediaRange.cs" />
+    <Compile Include="Media\MediaRangeInfo.cs" />
+    <Compile Include="Misc\ParseResult.cs" />
+    <Compile Include="FixtureModel\DmxSpecification\PatchGroup.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeValue.cs" />
+    <Compile Include="FixtureModel\Header\RdmSpecification.cs" />
+    <Compile Include="ResponseTime.cs" />
+    <Compile Include="Misc\Revision.cs" />
+    <Compile Include="FixtureModel\Slot.cs" />
+    <Compile Include="FixtureModel\Header\SpecValue.cs" />
+    <Compile Include="FixtureModel\Header\TestingInfo.cs" />
+    <Compile Include="Enums\ValidSlotEntry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModelDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

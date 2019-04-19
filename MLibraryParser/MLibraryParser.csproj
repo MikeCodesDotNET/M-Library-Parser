@@ -39,8 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FixtureModelParser.cs" />
-    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="BaseParser.cs" />
+    <Compile Include="FixtureModel\DmxSpec\DmxChannelParser.cs" />
+    <Compile Include="FixtureModel\DmxSpec\DmxSpecificationParser.cs" />
+    <Compile Include="FixtureModel\DmxSpec\FeatureRangeParser.cs" />
+    <Compile Include="FixtureModel\FixtureModelParser.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties\ElementStructureParser.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties\Maps\EnumMapParser.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties\PhyicalPropertiesParser.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties\Maps\SlotMapParser.cs" />
+    <Compile Include="FixtureModel\Header\PhysicalProperties\Maps\ValueMapParser.cs" />
+    <Compile Include="Helpers\XMLExtensions.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="MediaParser.cs" />
@@ -48,13 +57,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiteMic.Core.Fixture\LiteMic.Core.Fixture.csproj">
+    <ProjectReference Include="..\LiteMic.Core.Fixture\Carallon.Database.Models.csproj">
       <Project>{db70913b-965e-41fb-8f97-5bff6a25d0ab}</Project>
-      <Name>LiteMic.Core.Fixture</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LiteMic.Core\LiteMic.Core.csproj">
-      <Project>{b259e53b-3f84-4868-b420-bac3435a1bc9}</Project>
-      <Name>LiteMic.Core</Name>
+      <Name>Carallon.Database.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

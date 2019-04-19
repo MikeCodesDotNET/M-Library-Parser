@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using LiteMic.Core.Fixture;
-using LiteMic.Helpers;
+using Carallon.Helpers;
+using Carallon.MLibrary.Models.Misc;
+using Carallon.MLibrary.Models.Dmx;
+using Carallon.MLibrary.Models.Abstractions;
 
-namespace LiteMic.Parsers
+namespace Carallon.Parsers
 {
     public partial class Parser
     {
@@ -111,7 +110,6 @@ namespace LiteMic.Parsers
         {
             try
             {
-                T enumVal;
 
                 string orgVal = val;
 
@@ -121,7 +119,7 @@ namespace LiteMic.Parsers
 
                 var parts = val.Split(new[] { "#" }, StringSplitOptions.RemoveEmptyEntries);
 
-                Enum.TryParse(parts[0], true, out enumVal);
+                Enum.TryParse(parts[0], true, out T enumVal);
 
                 if (!Enum.IsDefined(typeof(T), enumVal))
                     throw new Exception(string.Format("Enum '{0}' value '{1}' not defined.", typeof(T).Name, orgVal));

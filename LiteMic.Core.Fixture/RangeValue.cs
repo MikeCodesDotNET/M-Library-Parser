@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Carallon.MLibrary.Models.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiteMic.Core.Fixture
+
+namespace Carallon.MLibrary.Models.Dmx
 {
     public class RangeValue : IRangeValue
     {

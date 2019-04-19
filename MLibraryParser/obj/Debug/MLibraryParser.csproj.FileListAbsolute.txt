@@ -7,3 +7,12 @@ C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryPars
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.csprojResolveAssemblyReference.cache
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.dll
 C:\Users\Mike\Downloads\FixtureLibrary-master\FixtureLibrary-master\MLibraryParser\obj\Debug\MLibraryParser.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\bin\Debug\MLibraryParser.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\bin\Debug\MLibraryParser.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\obj\Debug\MLibraryParser.csprojAssemblyReference.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\obj\Debug\MLibraryParser.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\obj\Debug\MLibraryParser.csproj.CopyComplete
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\obj\Debug\MLibraryParser.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\obj\Debug\MLibraryParser.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\bin\Debug\Carallon.MLibrary.Models.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\MLibraryParser\bin\Debug\Carallon.MLibrary.Models.pdb

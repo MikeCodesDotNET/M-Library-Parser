@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace LiteMic.Helpers
+namespace Carallon.Helpers
 {
     public class ValidateResult
     {
@@ -84,7 +84,6 @@ namespace LiteMic.Helpers
 
             return true;
         }
-
-
+        
     }
 }

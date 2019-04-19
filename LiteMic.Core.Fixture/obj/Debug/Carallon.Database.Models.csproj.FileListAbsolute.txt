@@ -1,0 +1,5 @@
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\Carallon.Database.Models.csproj.CoreCompileInputs.cache
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\Carallon.MLibrary.Models.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\bin\Debug\Carallon.MLibrary.Models.pdb
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\Carallon.MLibrary.Models.dll
+C:\Users\micha\Documents\Github\M-Library-Parser\LiteMic.Core.Fixture\obj\Debug\Carallon.MLibrary.Models.pdb
